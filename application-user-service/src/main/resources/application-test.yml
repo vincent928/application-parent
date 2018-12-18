@@ -1,0 +1,30 @@
+#########################################
+#           测试环境配置                 #
+#########################################
+
+server:
+  port: 8901
+
+spring:
+  application:
+    name: application-user-service
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    uesrname: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/springboot-application?autoReconnect=true&useSSL=false
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8900/eureka/

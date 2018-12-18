@@ -1,0 +1,16 @@
+#########################################
+#           开发环境配置                 #
+#########################################
+
+
+server:
+  port: 8902
+spring:
+  application:
+    name: application-index
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${server.port}:@project.version@
+  client:
+    service-url:
+      defaultZone: http://api:eureka@localhost:8900/eureka/

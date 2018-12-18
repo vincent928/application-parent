@@ -1,0 +1,13 @@
+#########################################
+#           生产环境配置                 #
+#########################################
+
+server:
+  port: 8902
+spring:
+  application:
+    name: application-index
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8900/eureka/

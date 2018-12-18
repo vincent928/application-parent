@@ -1,0 +1,19 @@
+#########################################
+#           生产环境配置                 #
+#########################################
+
+
+server:
+  port: 8900
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    #是否将自己作为服务注册到其他Eureka服务中心(单节点无需配置)
+    register-with-eureka: false
+    #是否从其他Eureka注册中心同步服务列表(单节点无需配置)
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+

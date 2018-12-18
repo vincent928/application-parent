@@ -1,3 +1,7 @@
+#########################################
+#           生产环境配置                 #
+#########################################
+
 server:
   port: 8901
 
@@ -20,7 +24,6 @@ mybatis:
 
 eureka:
   instance:
-    #\u6CE8\u518C\u670D\u52A1\u7684\u65F6\u5019\u4F7F\u7528\u670D\u52A1\u7684ip\u5730\u5740
     prefer-ip-address: true
   client:
     serviceUrl:

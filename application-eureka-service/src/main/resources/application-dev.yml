@@ -1,0 +1,31 @@
+#########################################
+#           开发环境配置                 #
+#########################################
+
+server:
+  port: 8900
+
+spring:
+  application:
+    name: application-eureka-service-security
+  #注册中心安全参数设置
+  security:
+    user:
+      name: api
+      password: eureka
+      roles: SERVICE_NODE
+
+eureka:
+    #是否开启自我保护机制
+#  server:
+#    enable-self-preservation: false
+  instance:
+    hostname: localhost
+  client:
+    #是否将自己作为服务注册到其他Eureka服务中心(单节点无需配置)
+    register-with-eureka: false
+    #是否从其他Eureka注册中心同步服务列表(单节点无需配置)
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://api:eureka@${eureka.instance.hostname}:${server.port}/eureka/
+

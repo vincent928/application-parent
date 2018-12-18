@@ -8,6 +8,11 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * @EnableDiscoveryClient是通用的客户端注解配置,
+ * 如果确定服务注册中心是Eureka，也可以使用
+ * @EnableEurekaClient
+ */
 @SpringBootApplication
 @EnableFeignClients
 @EnableDiscoveryClient
